@@ -1,0 +1,1 @@
+My main goal is to create a simple application where the user can manage employee data. 
