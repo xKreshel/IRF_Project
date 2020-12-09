@@ -281,7 +281,7 @@ namespace CompanyManagementSystem {
             
             private global::System.Data.DataColumn columnId;
             
-            private global::System.Data.DataColumn columnFistName;
+            private global::System.Data.DataColumn columnFirstName;
             
             private global::System.Data.DataColumn columnLastName;
             
@@ -338,9 +338,9 @@ namespace CompanyManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FistNameColumn {
+            public global::System.Data.DataColumn FirstNameColumn {
                 get {
-                    return this.columnFistName;
+                    return this.columnFirstName;
                 }
             }
             
@@ -429,11 +429,11 @@ namespace CompanyManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EmployeeRow AddEmployeeRow(string FistName, string LastName, string Gender, string Language, string PhoneNumber, string Email, string LoginName) {
+            public EmployeeRow AddEmployeeRow(string FirstName, string LastName, string Gender, string Language, string PhoneNumber, string Email, string LoginName) {
                 EmployeeRow rowEmployeeRow = ((EmployeeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        FistName,
+                        FirstName,
                         LastName,
                         Gender,
                         Language,
@@ -470,7 +470,7 @@ namespace CompanyManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columnFistName = base.Columns["FistName"];
+                this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
                 this.columnGender = base.Columns["Gender"];
                 this.columnLanguage = base.Columns["Language"];
@@ -484,8 +484,8 @@ namespace CompanyManagementSystem {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnFistName = new global::System.Data.DataColumn("FistName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFistName);
+                this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirstName);
                 this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLastName);
                 this.columnGender = new global::System.Data.DataColumn("Gender", typeof(string), null, global::System.Data.MappingType.Element);
@@ -506,8 +506,8 @@ namespace CompanyManagementSystem {
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnFistName.AllowDBNull = false;
-                this.columnFistName.MaxLength = 50;
+                this.columnFirstName.AllowDBNull = false;
+                this.columnFirstName.MaxLength = 50;
                 this.columnLastName.AllowDBNull = false;
                 this.columnLastName.MaxLength = 50;
                 this.columnGender.MaxLength = 1;
@@ -671,12 +671,12 @@ namespace CompanyManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string FistName {
+            public string FirstName {
                 get {
-                    return ((string)(this[this.tableEmployee.FistNameColumn]));
+                    return ((string)(this[this.tableEmployee.FirstNameColumn]));
                 }
                 set {
-                    this[this.tableEmployee.FistNameColumn] = value;
+                    this[this.tableEmployee.FirstNameColumn] = value;
                 }
             }
             
@@ -941,7 +941,7 @@ namespace CompanyManagementSystem.CompanyDatabaseDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Employee";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("FistName", "FistName");
+            tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
             tableMapping.ColumnMappings.Add("Gender", "Gender");
             tableMapping.ColumnMappings.Add("Language", "Language");
@@ -951,10 +951,10 @@ namespace CompanyManagementSystem.CompanyDatabaseDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Employee] WHERE (([Id] = @Original_Id) AND ([FistName] = @Original_FistName) AND ([LastName] = @Original_LastName) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)) AND ([Language] = @Original_Language) AND ((@IsNull_PhoneNumber = 1 AND [PhoneNumber] IS NULL) OR ([PhoneNumber] = @Original_PhoneNumber)) AND ([Email] = @Original_Email) AND ([LoginName] = @Original_LoginName))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Employee] WHERE (([Id] = @Original_Id) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)) AND ([Language] = @Original_Language) AND ((@IsNull_PhoneNumber = 1 AND [PhoneNumber] IS NULL) OR ([PhoneNumber] = @Original_PhoneNumber)) AND ([Email] = @Original_Email) AND ([LoginName] = @Original_LoginName))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FistName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FistName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -965,10 +965,10 @@ namespace CompanyManagementSystem.CompanyDatabaseDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LoginName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Employee] ([FistName], [LastName], [Gender], [Language], [PhoneNumber], [Email], [LoginName]) VALUES (@FistName, @LastName, @Gender, @Language, @PhoneNumber, @Email, @LoginName);
-SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName FROM Employee WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Employee] ([FirstName], [LastName], [Gender], [Language], [PhoneNumber], [Email], [LoginName]) VALUES (@FirstName, @LastName, @Gender, @Language, @PhoneNumber, @Email, @LoginName);
+SELECT Id, FirstName, LastName, Gender, Language, PhoneNumber, Email, LoginName FROM Employee WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FistName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FistName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Language", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Language", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -977,10 +977,10 @@ SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName F
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LoginName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Employee] SET [FistName] = @FistName, [LastName] = @LastName, [Gender] = @Gender, [Language] = @Language, [PhoneNumber] = @PhoneNumber, [Email] = @Email, [LoginName] = @LoginName WHERE (([Id] = @Original_Id) AND ([FistName] = @Original_FistName) AND ([LastName] = @Original_LastName) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)) AND ([Language] = @Original_Language) AND ((@IsNull_PhoneNumber = 1 AND [PhoneNumber] IS NULL) OR ([PhoneNumber] = @Original_PhoneNumber)) AND ([Email] = @Original_Email) AND ([LoginName] = @Original_LoginName));
-SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName FROM Employee WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Employee] SET [FirstName] = @FirstName, [LastName] = @LastName, [Gender] = @Gender, [Language] = @Language, [PhoneNumber] = @PhoneNumber, [Email] = @Email, [LoginName] = @LoginName WHERE (([Id] = @Original_Id) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)) AND ([Language] = @Original_Language) AND ((@IsNull_PhoneNumber = 1 AND [PhoneNumber] IS NULL) OR ([PhoneNumber] = @Original_PhoneNumber)) AND ([Email] = @Original_Email) AND ([LoginName] = @Original_LoginName));
+SELECT Id, FirstName, LastName, Gender, Language, PhoneNumber, Email, LoginName FROM Employee WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FistName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FistName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Language", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Language", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -988,7 +988,7 @@ SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName F
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LoginName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LoginName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FistName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FistName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1013,8 +1013,8 @@ SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName F
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName FR" +
-                "OM dbo.Employee";
+            this._commandCollection[0].CommandText = "SELECT Id, FirstName, LastName, Gender, Language, PhoneNumber, Email, LoginName F" +
+                "ROM dbo.Employee";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1075,13 +1075,13 @@ SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_FistName, string Original_LastName, string Original_Gender, string Original_Language, string Original_PhoneNumber, string Original_Email, string Original_LoginName) {
+        public virtual int Delete(int Original_Id, string Original_FirstName, string Original_LastName, string Original_Gender, string Original_Language, string Original_PhoneNumber, string Original_Email, string Original_LoginName) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_FistName == null)) {
-                throw new global::System.ArgumentNullException("Original_FistName");
+            if ((Original_FirstName == null)) {
+                throw new global::System.ArgumentNullException("Original_FirstName");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_FistName));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_FirstName));
             }
             if ((Original_LastName == null)) {
                 throw new global::System.ArgumentNullException("Original_LastName");
@@ -1143,12 +1143,12 @@ SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string FistName, string LastName, string Gender, string Language, string PhoneNumber, string Email, string LoginName) {
-            if ((FistName == null)) {
-                throw new global::System.ArgumentNullException("FistName");
+        public virtual int Insert(string FirstName, string LastName, string Gender, string Language, string PhoneNumber, string Email, string LoginName) {
+            if ((FirstName == null)) {
+                throw new global::System.ArgumentNullException("FirstName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(FistName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(FirstName));
             }
             if ((LastName == null)) {
                 throw new global::System.ArgumentNullException("LastName");
@@ -1207,7 +1207,7 @@ SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName F
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string FistName, 
+                    string FirstName, 
                     string LastName, 
                     string Gender, 
                     string Language, 
@@ -1215,7 +1215,7 @@ SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName F
                     string Email, 
                     string LoginName, 
                     int Original_Id, 
-                    string Original_FistName, 
+                    string Original_FirstName, 
                     string Original_LastName, 
                     string Original_Gender, 
                     string Original_Language, 
@@ -1223,11 +1223,11 @@ SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName F
                     string Original_Email, 
                     string Original_LoginName, 
                     int Id) {
-            if ((FistName == null)) {
-                throw new global::System.ArgumentNullException("FistName");
+            if ((FirstName == null)) {
+                throw new global::System.ArgumentNullException("FirstName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(FistName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(FirstName));
             }
             if ((LastName == null)) {
                 throw new global::System.ArgumentNullException("LastName");
@@ -1266,11 +1266,11 @@ SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName F
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(LoginName));
             }
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id));
-            if ((Original_FistName == null)) {
-                throw new global::System.ArgumentNullException("Original_FistName");
+            if ((Original_FirstName == null)) {
+                throw new global::System.ArgumentNullException("Original_FirstName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_FistName));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_FirstName));
             }
             if ((Original_LastName == null)) {
                 throw new global::System.ArgumentNullException("Original_LastName");
@@ -1333,8 +1333,8 @@ SELECT Id, FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string FistName, string LastName, string Gender, string Language, string PhoneNumber, string Email, string LoginName, int Original_Id, string Original_FistName, string Original_LastName, string Original_Gender, string Original_Language, string Original_PhoneNumber, string Original_Email, string Original_LoginName) {
-            return this.Update(FistName, LastName, Gender, Language, PhoneNumber, Email, LoginName, Original_Id, Original_FistName, Original_LastName, Original_Gender, Original_Language, Original_PhoneNumber, Original_Email, Original_LoginName, Original_Id);
+        public virtual int Update(string FirstName, string LastName, string Gender, string Language, string PhoneNumber, string Email, string LoginName, int Original_Id, string Original_FirstName, string Original_LastName, string Original_Gender, string Original_Language, string Original_PhoneNumber, string Original_Email, string Original_LoginName) {
+            return this.Update(FirstName, LastName, Gender, Language, PhoneNumber, Email, LoginName, Original_Id, Original_FirstName, Original_LastName, Original_Gender, Original_Language, Original_PhoneNumber, Original_Email, Original_LoginName, Original_Id);
         }
     }
     
