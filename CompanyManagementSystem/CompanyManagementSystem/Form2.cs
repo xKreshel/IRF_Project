@@ -36,14 +36,13 @@ namespace CompanyManagementSystem
 
         }
 
-        private void SaveBtn_Click(object sender, EventArgs e)
+        private void saveBtn_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Comma Seperated Values (*.csv)|*.csv";
-            sfd.DefaultExt = "csv";
+            sfd.Filter = "Comma Seperated Values (*.csv)|*.csv"; 
+            sfd.DefaultExt = "csv"; 
             sfd.AddExtension = true;
             if (sfd.ShowDialog() != DialogResult.OK) return;
-
             using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
             {
                 foreach (var s in employees)
@@ -66,6 +65,42 @@ namespace CompanyManagementSystem
                     sw.Write("\n");
                 }
             }
+        }
+
+        private void loadBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Comma Seperated Values (*.csv)|*.csv";
+            ofd.DefaultExt = "csv";
+            ofd.AddExtension = true;
+            employees.Clear();
+
+            if (ofd.ShowDialog() != DialogResult.OK) return;
+            using (StreamReader sr = new StreamReader(ofd.FileName, Encoding.Default))
+            {
+                
+                while (!sr.EndOfStream)
+                {
+                    string[] sor = sr.ReadLine().Split(';');
+
+                    Employee emp = new Employee();
+
+                    emp.Id = int.Parse(sor[0]);
+                    emp.FirstName = sor[1];
+                    emp.LastName = sor[2];
+                    emp.Gender = sor[3];
+                    emp.Language = sor[4];
+                    emp.PhoneNumber = sor[5];
+                    emp.Email = sor[6];
+                    emp.LoginName = sor[7];
+
+                    employees.Add(emp);
+                    dataGridView1.DataSource = employees;
+                    dataGridView1.Refresh();
+                }
+                
+            }
+            
         }
     }
 }

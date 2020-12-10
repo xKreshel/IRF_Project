@@ -43,7 +43,8 @@ namespace CompanyManagementSystem
             this.companyDatabaseDataSet = new CompanyManagementSystem.CompanyDatabaseDataSet();
             this.employeeTableAdapter = new CompanyManagementSystem.CompanyDatabaseDataSetTableAdapters.EmployeeTableAdapter();
             this.tableAdapterManager = new CompanyManagementSystem.CompanyDatabaseDataSetTableAdapters.TableAdapterManager();
-            this.SaveBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.loadBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyDatabaseDataSet)).BeginInit();
@@ -137,22 +138,33 @@ namespace CompanyManagementSystem
             this.tableAdapterManager.EmployeeTableAdapter = this.employeeTableAdapter;
             this.tableAdapterManager.UpdateOrder = CompanyManagementSystem.CompanyDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // SaveBtn
+            // saveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(703, 345);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(75, 23);
-            this.SaveBtn.TabIndex = 1;
-            this.SaveBtn.Text = "Save";
-            this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            this.saveBtn.Location = new System.Drawing.Point(698, 288);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.TabIndex = 1;
+            this.saveBtn.Text = "Save";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // loadBtn
+            // 
+            this.loadBtn.Location = new System.Drawing.Point(698, 339);
+            this.loadBtn.Name = "loadBtn";
+            this.loadBtn.Size = new System.Drawing.Size(75, 23);
+            this.loadBtn.TabIndex = 2;
+            this.loadBtn.Text = "Load";
+            this.loadBtn.UseVisualStyleBackColor = true;
+            this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.SaveBtn);
+            this.Controls.Add(this.loadBtn);
+            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -179,6 +191,7 @@ namespace CompanyManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button loadBtn;
     }
 }

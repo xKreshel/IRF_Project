@@ -54,6 +54,7 @@ namespace CompanyManagementSystem
                           where l.FirstName == employee.FirstName
                           select new
                           {
+                             Id = l.Id,
                              LastName = l.LastName,
                              Gender = l.Gender,
                              Language = l.Language,
