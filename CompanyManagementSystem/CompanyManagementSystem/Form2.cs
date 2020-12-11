@@ -26,7 +26,14 @@ namespace CompanyManagementSystem
             {
                 employees.Add(item);
             }
+        }
 
+        private void Form2_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+            Pen redPen = new Pen(Color.Red, 1);
+            Point p1 = new Point(20, 20);
+            Point p2 = new Point(20, 200);
+            e.Graphics.DrawLine(redPen, p1, p2);
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -67,6 +74,12 @@ namespace CompanyManagementSystem
             }
         }
 
+        private void searchFirstNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+        }
+
         private void loadBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -78,7 +91,7 @@ namespace CompanyManagementSystem
             if (ofd.ShowDialog() != DialogResult.OK) return;
             using (StreamReader sr = new StreamReader(ofd.FileName, Encoding.Default))
             {
-                
+
                 while (!sr.EndOfStream)
                 {
                     string[] sor = sr.ReadLine().Split(';');
@@ -98,15 +111,29 @@ namespace CompanyManagementSystem
                     dataGridView1.DataSource = employees;
                     dataGridView1.Refresh();
                 }
-                
+
             }
-            
         }
 
-        private void searchFirstNameToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Form2_Paint_1(object sender, PaintEventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            // Create pen.
+            Pen blackPen = new Pen(Color.Black, 3);
+
+            // Create coordinates of points that define line.
+            int x1 = 100;
+            int y1 = 100;
+            int x2 = 500;
+            int y2 = 100;
+
+            // Draw line to screen.
+            e.Graphics.DrawLine(blackPen, x1, y1, x2, y2);
+        }
+
+        private void hierarchyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
         }
     }
 }

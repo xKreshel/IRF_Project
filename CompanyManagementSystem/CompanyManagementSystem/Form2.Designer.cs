@@ -48,6 +48,7 @@ namespace CompanyManagementSystem
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchFirstNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hierarchyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyDatabaseDataSet)).BeginInit();
@@ -175,7 +176,8 @@ namespace CompanyManagementSystem
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.searchFirstNameToolStripMenuItem});
+            this.searchFirstNameToolStripMenuItem,
+            this.hierarchyToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
@@ -186,6 +188,13 @@ namespace CompanyManagementSystem
             this.searchFirstNameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.searchFirstNameToolStripMenuItem.Text = "Search FirstName";
             this.searchFirstNameToolStripMenuItem.Click += new System.EventHandler(this.searchFirstNameToolStripMenuItem_Click);
+            // 
+            // hierarchyToolStripMenuItem
+            // 
+            this.hierarchyToolStripMenuItem.Name = "hierarchyToolStripMenuItem";
+            this.hierarchyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hierarchyToolStripMenuItem.Text = "Hierarchy";
+            this.hierarchyToolStripMenuItem.Click += new System.EventHandler(this.hierarchyToolStripMenuItem_Click);
             // 
             // Form2
             // 
@@ -200,6 +209,7 @@ namespace CompanyManagementSystem
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form2_Paint_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyDatabaseDataSet)).EndInit();
@@ -230,5 +240,6 @@ namespace CompanyManagementSystem
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchFirstNameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hierarchyToolStripMenuItem;
     }
 }
