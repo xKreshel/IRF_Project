@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace CompanyManagementSystem
 {
+    //Credit: Jason FinTech for Drawing -> https://www.youtube.com/watch?v=5Y-Qq3_PWrQ
+    //Credit: Nishan Chathuranga Wickramarathna for Screen Capturing -> https://medium.com/@nishancw/c-screenshot-utility-to-capture-a-portion-of-the-screen-489ddceeee49
     public partial class Form1 : Form
     {
         CompanyDatabaseEntities context = new CompanyDatabaseEntities();

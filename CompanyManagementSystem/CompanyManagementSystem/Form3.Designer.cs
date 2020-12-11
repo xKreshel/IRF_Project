@@ -36,6 +36,7 @@ namespace CompanyManagementSystem
             this.lineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.captureBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +87,7 @@ namespace CompanyManagementSystem
             // 
             // captureBtn
             // 
-            this.captureBtn.Location = new System.Drawing.Point(52, 63);
+            this.captureBtn.Location = new System.Drawing.Point(696, 56);
             this.captureBtn.Name = "captureBtn";
             this.captureBtn.Size = new System.Drawing.Size(75, 23);
             this.captureBtn.TabIndex = 1;
@@ -94,11 +95,22 @@ namespace CompanyManagementSystem
             this.captureBtn.UseVisualStyleBackColor = true;
             this.captureBtn.Click += new System.EventHandler(this.captureBtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(696, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add Name";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.captureBtn);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form3";
@@ -117,5 +129,6 @@ namespace CompanyManagementSystem
         private System.Windows.Forms.ToolStripMenuItem lineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moveLineToolStripMenuItem;
         private System.Windows.Forms.Button captureBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

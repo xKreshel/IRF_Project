@@ -13,7 +13,6 @@ namespace CompanyManagementSystem
 {
     public partial class Form3 : Form
     {
-        //Credit: Jason FinTech: https://www.youtube.com/watch?v=5Y-Qq3_PWrQ
         private List<LineList> MyLines = new List<LineList>();
         public Point MouseDownLocation;
         private bool IsMouseDown = false;
@@ -25,6 +24,11 @@ namespace CompanyManagementSystem
         Point Point1 = new Point();
         Point Point2 = new Point();
         Point StartDownLocation = new Point();
+
+        int Count = 0;
+        int DistanceUnit = 1;
+        Point move;
+
         public Form3()
         {
             InitializeComponent();
@@ -194,6 +198,38 @@ namespace CompanyManagementSystem
         {
             SelectArea sa = new SelectArea();
             sa.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Count++;
+            for (int i = 0; i < Count; i++)
+            {
+                TextBox l = new TextBox();
+                l.BackColor = Color.LightBlue;
+                l.Top = DistanceUnit * 30;
+                l.Left = 150;
+                l.MouseDown += L_MouseDown;
+                l.MouseMove += L_MouseMove;
+                DistanceUnit = DistanceUnit + 1;
+                l.Parent = pictureBox1;
+                Count--;
+            }
+        }
+
+        private void L_MouseMove(object sender, MouseEventArgs e)
+        {
+            Control o = (Control)sender;
+            if (e.Button == MouseButtons.Left)
+            {
+                o.Left += e.X - move.X;
+                o.Top += e.Y - move.Y;
+            }
+        }
+
+        private void L_MouseDown(object sender, MouseEventArgs e)
+        {
+            move = e.Location;
         }
     }
 }
