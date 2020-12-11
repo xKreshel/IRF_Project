@@ -66,11 +66,5 @@ namespace CompanyManagementSystem
             
             dataGridView1.DataSource = lessons.ToList();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
-        }
     }
 }
