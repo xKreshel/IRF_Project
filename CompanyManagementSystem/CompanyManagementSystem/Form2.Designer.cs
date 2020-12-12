@@ -30,7 +30,7 @@ namespace CompanyManagementSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.employeesDataGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,17 +49,17 @@ namespace CompanyManagementSystem
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchFirstNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hierarchyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyDatabaseDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // employeesDataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.employeesDataGridView.AutoGenerateColumns = false;
+            this.employeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
@@ -68,11 +68,11 @@ namespace CompanyManagementSystem
             this.phoneNumberDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.loginNameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.employeeBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(630, 333);
-            this.dataGridView1.TabIndex = 0;
+            this.employeesDataGridView.DataSource = this.employeeBindingSource;
+            this.employeesDataGridView.Location = new System.Drawing.Point(12, 41);
+            this.employeesDataGridView.Name = "employeesDataGridView";
+            this.employeesDataGridView.Size = new System.Drawing.Size(630, 333);
+            this.employeesDataGridView.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -185,14 +185,14 @@ namespace CompanyManagementSystem
             // searchFirstNameToolStripMenuItem
             // 
             this.searchFirstNameToolStripMenuItem.Name = "searchFirstNameToolStripMenuItem";
-            this.searchFirstNameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchFirstNameToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.searchFirstNameToolStripMenuItem.Text = "Search FirstName";
             this.searchFirstNameToolStripMenuItem.Click += new System.EventHandler(this.searchFirstNameToolStripMenuItem_Click);
             // 
             // hierarchyToolStripMenuItem
             // 
             this.hierarchyToolStripMenuItem.Name = "hierarchyToolStripMenuItem";
-            this.hierarchyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hierarchyToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.hierarchyToolStripMenuItem.Text = "Hierarchy";
             this.hierarchyToolStripMenuItem.Click += new System.EventHandler(this.hierarchyToolStripMenuItem_Click);
             // 
@@ -203,14 +203,13 @@ namespace CompanyManagementSystem
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.saveBtn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.employeesDataGridView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form2_Paint_1);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyDatabaseDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -222,7 +221,7 @@ namespace CompanyManagementSystem
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView employeesDataGridView;
         private CompanyDatabaseDataSet companyDatabaseDataSet;
         private System.Windows.Forms.BindingSource employeeBindingSource;
         private CompanyDatabaseDataSetTableAdapters.EmployeeTableAdapter employeeTableAdapter;

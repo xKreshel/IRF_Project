@@ -25,7 +25,7 @@ namespace CompanyManagementSystem
 
             
             FillDataSource();
-            listBox1.DisplayMember = "FirstName";
+            employeeslistBox.DisplayMember = "FirstName";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,36 +37,36 @@ namespace CompanyManagementSystem
 
         private void FillDataSource()
         {
-            listBox1.DataSource = (from i in context.Employees
-                                   where i.FirstName.Contains(textBox1.Text)
+            employeeslistBox.DataSource = (from i in context.Employees
+                                   where i.FirstName.Contains(searchTextBox.Text)
                                    select i).ToList();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
             FillDataSource();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void employeesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            Employee employee = (Employee)listBox1.SelectedItem;
 
-            var lessons = from l in context.Employees
-                          where l.FirstName == employee.FirstName
+            Employee employee = (Employee)employeeslistBox.SelectedItem;
+
+            var selectedEmployee = from emp in context.Employees
+                          where emp.FirstName == employee.FirstName
                           select new
                           {
-                             Id = l.Id,
-                             LastName = l.LastName,
-                             Gender = l.Gender,
-                             Language = l.Language,
-                             PhoneNumber = l.PhoneNumber,
-                             Email = l.Email,
-                             LoginName = l.LoginName,
-                             FirstName = l.FirstName
-                         };
-            
-            dataGridView1.DataSource = lessons.ToList();
+                              Id = emp.Id,
+                              LastName = emp.LastName,
+                              Gender = emp.Gender,
+                              Language = emp.Language,
+                              PhoneNumber = emp.PhoneNumber,
+                              Email = emp.Email,
+                              LoginName = emp.LoginName,
+                              FirstName = emp.FirstName
+                          };
+
+            employeeDataGridView.DataSource = selectedEmployee.ToList();
         }
     }
 }
