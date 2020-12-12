@@ -106,6 +106,7 @@ namespace CompanyManagementSystem
         {
             this.Hide();
             Save save = new Save(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
+            save.Size = new Size(this.Width, this.Height);
             save.Show();
         }
     }

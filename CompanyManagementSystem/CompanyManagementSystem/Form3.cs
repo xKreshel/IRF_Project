@@ -200,7 +200,7 @@ namespace CompanyManagementSystem
             sa.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addEmployeeBtn_Click(object sender, EventArgs e)
         {
             Count++;
             for (int i = 0; i < Count; i++)
