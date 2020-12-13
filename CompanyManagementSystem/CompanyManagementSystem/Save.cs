@@ -17,8 +17,6 @@ namespace CompanyManagementSystem
         public Save(Int32 x, Int32 y, Int32 w, Int32 h, Size s)
         {
             InitializeComponent();
-            //C#: how to take a screenshot of a portion of screen https://stackoverflow.com/a/3306633/5260872
-
             Rectangle rect = new Rectangle(x, y, w, h);
             bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
             Graphics g = Graphics.FromImage(bmp);

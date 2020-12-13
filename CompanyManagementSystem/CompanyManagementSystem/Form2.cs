@@ -20,6 +20,22 @@ namespace CompanyManagementSystem
         {
             InitializeComponent();
             FillDataGridView();
+            DesignDataGridView();
+        }
+
+        private void DesignDataGridView()
+        {
+            employeesDataGridView.BorderStyle = BorderStyle.None;
+            employeesDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            employeesDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            employeesDataGridView.DefaultCellStyle.SelectionBackColor = Color.DarkBlue;
+            employeesDataGridView.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            employeesDataGridView.BackgroundColor = Color.FromArgb(30, 30, 30);
+            employeesDataGridView.EnableHeadersVisualStyles = false;
+            employeesDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            employeesDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            employeesDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            employeesDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 
         private void FillDataGridView()

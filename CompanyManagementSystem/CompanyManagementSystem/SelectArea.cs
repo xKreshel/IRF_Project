@@ -23,14 +23,13 @@ namespace CompanyManagementSystem
         [DllImport("User32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        //How to resize a form without a border? https://stackoverflow.com/a/32261547/5260872
         public SelectArea()
         {
             InitializeComponent();
 
-            this.Opacity = .5D; //Make trasparent
+            this.Opacity = .5D; 
             this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.ResizeRedraw, true); // this is to avoid visual artifacts
+            this.SetStyle(ControlStyles.ResizeRedraw, true); 
 
             this.panelDrag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
     |       System.Windows.Forms.AnchorStyles.Left)
@@ -42,7 +41,7 @@ namespace CompanyManagementSystem
             
         }
 
-        protected override void OnPaint(PaintEventArgs e) // you can safely omit this method if you want
+        protected override void OnPaint(PaintEventArgs e) 
         {
             e.Graphics.FillRectangle(Brushes.Green, Top);
             e.Graphics.FillRectangle(Brushes.Green, Left);
@@ -60,7 +59,7 @@ namespace CompanyManagementSystem
             HTBOTTOMLEFT = 16,
             HTBOTTOMRIGHT = 17;
 
-        const int _ = 10; // you can rename this variable if you like
+        const int _ = 10; 
 
         Rectangle Top { get { return new Rectangle(0, 0, this.ClientSize.Width, _); } }
         Rectangle Left { get { return new Rectangle(0, 0, _, this.ClientSize.Height); } }
@@ -86,7 +85,7 @@ namespace CompanyManagementSystem
         {
             base.WndProc(ref message);
 
-            if (message.Msg == 0x84) // WM_NCHITTEST
+            if (message.Msg == 0x84) 
             {
                 var cursor = this.PointToClient(Cursor.Position);
 
