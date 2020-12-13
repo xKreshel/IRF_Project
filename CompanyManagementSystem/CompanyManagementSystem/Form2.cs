@@ -137,5 +137,21 @@ namespace CompanyManagementSystem
             Form1 form1 = new Form1();
             form1.Show();
         }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            switch (e.CloseReason)
+            {
+                case CloseReason.UserClosing:
+                    if (MessageBox.Show("Biztosan ki akarsz lépni?",
+                                        "Kilépés?",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        e.Cancel = true;
+                    }
+                    break;
+            }
+        }
     }
 }

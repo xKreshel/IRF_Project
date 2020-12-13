@@ -90,5 +90,7 @@ namespace CompanyManagementSystem
 
             employeeDataGridView.DataSource = selectedEmployee.ToList();
         }
+
+
     }
 }

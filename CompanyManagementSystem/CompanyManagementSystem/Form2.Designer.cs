@@ -30,6 +30,7 @@ namespace CompanyManagementSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.employeesDataGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +50,7 @@ namespace CompanyManagementSystem
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchFirstNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hierarchyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyDatabaseDataSet)).BeginInit();
@@ -153,9 +155,12 @@ namespace CompanyManagementSystem
             // 
             // saveBtn
             // 
-            this.saveBtn.BackColor = System.Drawing.Color.Black;
-            this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Location = new System.Drawing.Point(698, 288);
+            this.saveBtn.BackColor = System.Drawing.Color.White;
+            this.saveBtn.ForeColor = System.Drawing.Color.Black;
+            this.saveBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.saveBtn.ImageIndex = 1;
+            this.saveBtn.ImageList = this.imageList1;
+            this.saveBtn.Location = new System.Drawing.Point(698, 263);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 1;
@@ -165,8 +170,11 @@ namespace CompanyManagementSystem
             // 
             // loadBtn
             // 
-            this.loadBtn.BackColor = System.Drawing.Color.Black;
-            this.loadBtn.ForeColor = System.Drawing.Color.White;
+            this.loadBtn.BackColor = System.Drawing.Color.White;
+            this.loadBtn.ForeColor = System.Drawing.Color.Black;
+            this.loadBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.loadBtn.ImageIndex = 0;
+            this.loadBtn.ImageList = this.imageList1;
             this.loadBtn.Location = new System.Drawing.Point(698, 339);
             this.loadBtn.Name = "loadBtn";
             this.loadBtn.Size = new System.Drawing.Size(75, 23);
@@ -208,6 +216,13 @@ namespace CompanyManagementSystem
             this.hierarchyToolStripMenuItem.Text = "Hierarchy";
             this.hierarchyToolStripMenuItem.Click += new System.EventHandler(this.hierarchyToolStripMenuItem_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "load.png");
+            this.imageList1.Images.SetKeyName(1, "save.png");
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +236,7 @@ namespace CompanyManagementSystem
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form2";
             this.Text = "Main Page";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
@@ -253,5 +269,6 @@ namespace CompanyManagementSystem
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchFirstNameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hierarchyToolStripMenuItem;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
