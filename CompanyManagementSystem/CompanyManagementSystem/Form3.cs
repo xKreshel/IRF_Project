@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,7 +25,6 @@ namespace CompanyManagementSystem
         Point Point1 = new Point();
         Point Point2 = new Point();
         Point StartDownLocation = new Point();
-
         int Count = 0;
         int DistanceUnit = 1;
         Point move;
@@ -143,7 +143,7 @@ namespace CompanyManagementSystem
 
             for (i = 0; i <= MyLines.Count - 1; i++)
             {
-                Pen LinePen = new Pen(Color.FromArgb(255, 255, 0, 0), 3);
+                Pen LinePen = new Pen(Color.FromArgb(87, 175, 247), 3);
                 x1 = MyLines[i].X1;
                 x2 = MyLines[i].X2;
                 y1 = MyLines[i].Y1;

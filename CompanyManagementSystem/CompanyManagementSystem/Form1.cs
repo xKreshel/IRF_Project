@@ -25,7 +25,9 @@ namespace CompanyManagementSystem
 
             
             FillDataSource();
+            DesignDataGridView();
             employeeslistBox.DisplayMember = "FirstName";
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -42,6 +44,26 @@ namespace CompanyManagementSystem
                                    select i).ToList();
         }
 
+        private void DesignDataGridView()
+        {
+            foreach (DataGridViewColumn col in employeeDataGridView.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+            employeeDataGridView.BorderStyle = BorderStyle.None;
+            employeeDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            employeeDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            employeeDataGridView.DefaultCellStyle.SelectionBackColor = Color.FromArgb(128, 128, 255);
+            employeeDataGridView.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            employeeDataGridView.BackgroundColor = Color.FromArgb(204, 204, 255);
+            employeeDataGridView.EnableHeadersVisualStyles = false;
+            employeeDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            employeeDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            employeeDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(204, 204, 255);
+            employeeDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+        }
+
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
             FillDataSource();
@@ -51,7 +73,7 @@ namespace CompanyManagementSystem
         {
 
             Employee employee = (Employee)employeeslistBox.SelectedItem;
-
+            
             var selectedEmployee = from emp in context.Employees
                           where emp.FirstName == employee.FirstName
                           select new
