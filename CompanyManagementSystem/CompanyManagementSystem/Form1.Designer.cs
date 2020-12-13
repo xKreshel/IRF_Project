@@ -30,6 +30,7 @@ namespace CompanyManagementSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.employeeDataGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -172,6 +173,7 @@ namespace CompanyManagementSystem
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.employeeslistBox);
             this.Controls.Add(this.employeeDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "SearchEmployee";
             this.Load += new System.EventHandler(this.Form1_Load);

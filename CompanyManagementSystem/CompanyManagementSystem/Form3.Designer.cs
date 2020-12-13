@@ -30,6 +30,7 @@ namespace CompanyManagementSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,6 +115,7 @@ namespace CompanyManagementSystem
             this.Controls.Add(this.addEmployeeBtn);
             this.Controls.Add(this.captureBtn);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
             this.Text = "Hierarchy";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

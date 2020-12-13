@@ -233,6 +233,7 @@ namespace CompanyManagementSystem
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.employeesDataGridView);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form2";
             this.Text = "Main Page";
