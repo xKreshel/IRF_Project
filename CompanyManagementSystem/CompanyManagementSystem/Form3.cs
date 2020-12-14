@@ -14,7 +14,7 @@ namespace CompanyManagementSystem
 {
     public partial class Form3 : Form
     {
-        private List<LineList> MyLines = new List<LineList>();
+        private readonly List<LineList> MyLines = new List<LineList>();
         public Point MouseDownLocation;
         private bool IsMouseDown = false;
         private int m_StartX;
@@ -35,7 +35,7 @@ namespace CompanyManagementSystem
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         }
 
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             IsMouseDown = true;
 
@@ -46,10 +46,8 @@ namespace CompanyManagementSystem
             StartDownLocation = e.Location;
         }
 
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            Pen dashed_pen = new Pen(Color.Green, 1);
-            dashed_pen.DashStyle = DashStyle.Dash;
             if (IsMouseDown == false) return;
             m_CurX = e.X;
             m_CurY = e.Y;
@@ -92,7 +90,7 @@ namespace CompanyManagementSystem
             pictureBox1.Invalidate();
         }
 
-        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        private void PictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             IsMouseDown = false;
 
@@ -102,31 +100,37 @@ namespace CompanyManagementSystem
                 {
                     case "Line":
                         {
-                            LineList DrawLine = new LineList();
-                            DrawLine.X1 = m_StartX;
-                            DrawLine.Y1 = m_StartY;
-                            DrawLine.X2 = m_CurX;
-                            DrawLine.Y2 = m_CurY;
+                            LineList DrawLine = new LineList
+                            {
+                                X1 = m_StartX,
+                                Y1 = m_StartY,
+                                X2 = m_CurX,
+                                Y2 = m_CurY
+                            };
                             MyLines.Add(DrawLine);
                             break;
                         }
                     case "CopyLine":
                         {
-                            LineList DrawLine = new LineList();
-                            DrawLine.X1 = Point1.X;
-                            DrawLine.Y1 = Point1.Y;
-                            DrawLine.X2 = Point2.X;
-                            DrawLine.Y2 = Point2.Y;
+                            LineList DrawLine = new LineList
+                            {
+                                X1 = Point1.X,
+                                Y1 = Point1.Y,
+                                X2 = Point2.X,
+                                Y2 = Point2.Y
+                            };
                             MyLines.Add(DrawLine);
                             break;
                         }
                     case "MoveLine":
                         {
-                            LineList DrawLine = new LineList();
-                            DrawLine.X1 = Point1.X;
-                            DrawLine.Y1 = Point1.Y;
-                            DrawLine.X2 = Point2.X;
-                            DrawLine.Y2 = Point2.Y;
+                            LineList DrawLine = new LineList
+                            {
+                                X1 = Point1.X,
+                                Y1 = Point1.Y,
+                                X2 = Point2.X,
+                                Y2 = Point2.Y
+                            };
                             MyLines.Add(DrawLine);
                             int count = MyLines.Count - 1;
                             MyLines.RemoveAt(count - 1);
@@ -137,7 +141,7 @@ namespace CompanyManagementSystem
             }
         }
 
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        private void PictureBox1_Paint(object sender, PaintEventArgs e)
         {
             int i, x1, y1, x2, y2;
 
@@ -179,39 +183,41 @@ namespace CompanyManagementSystem
             }
         }
 
-        private void copyLineToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CopyLineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DrawCase = "CopyLine";
         }
 
-        private void lineToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DrawCase = "Line";
         }
 
-        private void moveLineToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MoveLineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DrawCase = "MoveLine";
         }
 
-        private void captureBtn_Click(object sender, EventArgs e)
+        private void CaptureBtn_Click(object sender, EventArgs e)
         {
             SelectArea sa = new SelectArea();
             sa.Show();
         }
 
-        private void addEmployeeBtn_Click(object sender, EventArgs e)
+        private void AddEmployeeBtn_Click(object sender, EventArgs e)
         {
             Count++;
             for (int i = 0; i < Count; i++)
             {
-                TextBox l = new TextBox();
-                l.BackColor = Color.LightBlue;
-                l.Top = DistanceUnit * 30;
-                l.Left = 150;
+                TextBox l = new TextBox
+                {
+                    BackColor = Color.LightBlue,
+                    Top = DistanceUnit * 30,
+                    Left = 150
+                };
                 l.MouseDown += L_MouseDown;
                 l.MouseMove += L_MouseMove;
-                DistanceUnit = DistanceUnit + 1;
+                DistanceUnit++;
                 l.Parent = pictureBox1;
                 Count--;
             }

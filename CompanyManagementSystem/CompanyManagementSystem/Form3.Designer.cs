@@ -51,10 +51,10 @@ namespace CompanyManagementSystem
             this.pictureBox1.Size = new System.Drawing.Size(800, 450);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox1_Paint);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseUp);
             // 
             // contextMenuStrip1
             // 
@@ -70,21 +70,21 @@ namespace CompanyManagementSystem
             this.copyLineToolStripMenuItem.Name = "copyLineToolStripMenuItem";
             this.copyLineToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.copyLineToolStripMenuItem.Text = "CopyLine";
-            this.copyLineToolStripMenuItem.Click += new System.EventHandler(this.copyLineToolStripMenuItem_Click);
+            this.copyLineToolStripMenuItem.Click += new System.EventHandler(this.CopyLineToolStripMenuItem_Click);
             // 
             // lineToolStripMenuItem
             // 
             this.lineToolStripMenuItem.Name = "lineToolStripMenuItem";
             this.lineToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.lineToolStripMenuItem.Text = "Line";
-            this.lineToolStripMenuItem.Click += new System.EventHandler(this.lineToolStripMenuItem_Click);
+            this.lineToolStripMenuItem.Click += new System.EventHandler(this.LineToolStripMenuItem_Click);
             // 
             // moveLineToolStripMenuItem
             // 
             this.moveLineToolStripMenuItem.Name = "moveLineToolStripMenuItem";
             this.moveLineToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.moveLineToolStripMenuItem.Text = "MoveLine";
-            this.moveLineToolStripMenuItem.Click += new System.EventHandler(this.moveLineToolStripMenuItem_Click);
+            this.moveLineToolStripMenuItem.Click += new System.EventHandler(this.MoveLineToolStripMenuItem_Click);
             // 
             // captureBtn
             // 
@@ -94,7 +94,7 @@ namespace CompanyManagementSystem
             this.captureBtn.TabIndex = 1;
             this.captureBtn.Text = "Capture";
             this.captureBtn.UseVisualStyleBackColor = true;
-            this.captureBtn.Click += new System.EventHandler(this.captureBtn_Click);
+            this.captureBtn.Click += new System.EventHandler(this.CaptureBtn_Click);
             // 
             // addEmployeeBtn
             // 
@@ -104,7 +104,7 @@ namespace CompanyManagementSystem
             this.addEmployeeBtn.TabIndex = 2;
             this.addEmployeeBtn.Text = "Add Employee";
             this.addEmployeeBtn.UseVisualStyleBackColor = true;
-            this.addEmployeeBtn.Click += new System.EventHandler(this.addEmployeeBtn_Click);
+            this.addEmployeeBtn.Click += new System.EventHandler(this.AddEmployeeBtn_Click);
             // 
             // Form3
             // 

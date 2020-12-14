@@ -39,7 +39,7 @@ namespace CompanyManagementSystem
             this.panelDrag.Name = "panelDrag";
             this.panelDrag.Size = new System.Drawing.Size(200, 100);
             this.panelDrag.TabIndex = 0;
-            this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown_1);
+            this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelDrag_MouseDown_1);
             // 
             // btnCaptureThis
             // 
@@ -49,7 +49,7 @@ namespace CompanyManagementSystem
             this.btnCaptureThis.TabIndex = 1;
             this.btnCaptureThis.Text = "Capture this!";
             this.btnCaptureThis.UseVisualStyleBackColor = true;
-            this.btnCaptureThis.Click += new System.EventHandler(this.btnCaptureThis_Click);
+            this.btnCaptureThis.Click += new System.EventHandler(this.BtnCaptureThis_Click);
             // 
             // SelectArea
             // 

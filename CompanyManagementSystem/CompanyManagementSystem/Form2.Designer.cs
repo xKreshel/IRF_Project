@@ -166,7 +166,7 @@ namespace CompanyManagementSystem
             this.saveBtn.TabIndex = 1;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = false;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            this.saveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // loadBtn
             // 
@@ -181,7 +181,7 @@ namespace CompanyManagementSystem
             this.loadBtn.TabIndex = 2;
             this.loadBtn.Text = "Load";
             this.loadBtn.UseVisualStyleBackColor = false;
-            this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
+            this.loadBtn.Click += new System.EventHandler(this.LoadBtn_Click);
             // 
             // menuStrip1
             // 
@@ -207,14 +207,14 @@ namespace CompanyManagementSystem
             this.searchFirstNameToolStripMenuItem.Name = "searchFirstNameToolStripMenuItem";
             this.searchFirstNameToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.searchFirstNameToolStripMenuItem.Text = "Search FirstName";
-            this.searchFirstNameToolStripMenuItem.Click += new System.EventHandler(this.searchFirstNameToolStripMenuItem_Click);
+            this.searchFirstNameToolStripMenuItem.Click += new System.EventHandler(this.SearchFirstNameToolStripMenuItem_Click);
             // 
             // hierarchyToolStripMenuItem
             // 
             this.hierarchyToolStripMenuItem.Name = "hierarchyToolStripMenuItem";
             this.hierarchyToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.hierarchyToolStripMenuItem.Text = "Hierarchy";
-            this.hierarchyToolStripMenuItem.Click += new System.EventHandler(this.hierarchyToolStripMenuItem_Click);
+            this.hierarchyToolStripMenuItem.Click += new System.EventHandler(this.HierarchyToolStripMenuItem_Click);
             // 
             // imageList1
             // 

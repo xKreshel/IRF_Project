@@ -14,8 +14,8 @@ namespace CompanyManagementSystem
 {
     public partial class Form2 : Form
     {
-        CompanyDatabaseEntities context = new CompanyDatabaseEntities();
-        BindingList<Employee> employees = new BindingList<Employee>();
+        readonly CompanyDatabaseEntities context = new CompanyDatabaseEntities();
+        readonly BindingList<Employee> employees = new BindingList<Employee>();
         public Form2()
         {
             InitializeComponent();
@@ -61,12 +61,14 @@ namespace CompanyManagementSystem
 
         }
 
-        private void saveBtn_Click(object sender, EventArgs e)
+        private void SaveBtn_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Comma Seperated Values (*.csv)|*.csv"; 
-            sfd.DefaultExt = "csv"; 
-            sfd.AddExtension = true;
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                Filter = "Comma Seperated Values (*.csv)|*.csv",
+                DefaultExt = "csv",
+                AddExtension = true
+            };
             if (sfd.ShowDialog() != DialogResult.OK) return;
             using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
             {
@@ -92,12 +94,14 @@ namespace CompanyManagementSystem
             }
         }
 
-        private void loadBtn_Click(object sender, EventArgs e)
+        private void LoadBtn_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Comma Seperated Values (*.csv)|*.csv";
-            ofd.DefaultExt = "csv";
-            ofd.AddExtension = true;
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "Comma Seperated Values (*.csv)|*.csv",
+                DefaultExt = "csv",
+                AddExtension = true
+            };
             employees.Clear();
 
             if (ofd.ShowDialog() != DialogResult.OK) return;
@@ -108,16 +112,17 @@ namespace CompanyManagementSystem
                 {
                     string[] sor = sr.ReadLine().Split(';');
 
-                    Employee emp = new Employee();
-
-                    emp.Id = int.Parse(sor[0]);
-                    emp.FirstName = sor[1];
-                    emp.LastName = sor[2];
-                    emp.Gender = sor[3];
-                    emp.Language = sor[4];
-                    emp.PhoneNumber = sor[5];
-                    emp.Email = sor[6];
-                    emp.LoginName = sor[7];
+                    Employee emp = new Employee
+                    {
+                        Id = int.Parse(sor[0]),
+                        FirstName = sor[1],
+                        LastName = sor[2],
+                        Gender = sor[3],
+                        Language = sor[4],
+                        PhoneNumber = sor[5],
+                        Email = sor[6],
+                        LoginName = sor[7]
+                    };
 
                     employees.Add(emp);
                     employeesDataGridView.DataSource = employees;
@@ -126,18 +131,19 @@ namespace CompanyManagementSystem
 
             }
         }
-        private void hierarchyToolStripMenuItem_Click(object sender, EventArgs e)
+        private void HierarchyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3();
             form3.Show();
         }
 
-        private void searchFirstNameToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SearchFirstNameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
             form1.Show();
         }
 
+        
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             switch (e.CloseReason)

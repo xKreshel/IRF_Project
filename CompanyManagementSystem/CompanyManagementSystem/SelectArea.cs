@@ -65,7 +65,7 @@ namespace CompanyManagementSystem
         Rectangle Left { get { return new Rectangle(0, 0, _, this.ClientSize.Height); } }
         Rectangle Bottom { get { return new Rectangle(0, this.ClientSize.Height - _, this.ClientSize.Width, _); } }
 
-        private void panelDrag_MouseDown_1(object sender, MouseEventArgs e)
+        private void PanelDrag_MouseDown_1(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -101,11 +101,13 @@ namespace CompanyManagementSystem
             }
         }
 
-        private void btnCaptureThis_Click(object sender, EventArgs e)
+        private void BtnCaptureThis_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Save save = new Save(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
-            save.Size = new Size(this.Width, this.Height);
+            Save save = new Save(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size)
+            {
+                Size = new Size(this.Width, this.Height)
+            };
             save.Show();
         }
     }
