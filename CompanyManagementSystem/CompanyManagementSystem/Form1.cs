@@ -15,7 +15,7 @@ namespace CompanyManagementSystem
     //Credit: Nishan Chathuranga Wickramarathna for Screen Capturing -> https://medium.com/@nishancw/c-screenshot-utility-to-capture-a-portion-of-the-screen-489ddceeee49
     public partial class Form1 : Form
     {
-        CompanyDatabaseEntities context = new CompanyDatabaseEntities();
+        readonly CompanyDatabaseEntities context = new CompanyDatabaseEntities();
         public Form1()
         {
             InitializeComponent();
@@ -64,12 +64,12 @@ namespace CompanyManagementSystem
             employeeDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
         }
 
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             FillDataSource();
         }
 
-        private void employeesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void EmployeesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             Employee employee = (Employee)employeeslistBox.SelectedItem;
@@ -78,14 +78,14 @@ namespace CompanyManagementSystem
                           where emp.FirstName == employee.FirstName
                           select new
                           {
-                              Id = emp.Id,
-                              LastName = emp.LastName,
-                              Gender = emp.Gender,
-                              Language = emp.Language,
-                              PhoneNumber = emp.PhoneNumber,
-                              Email = emp.Email,
-                              LoginName = emp.LoginName,
-                              FirstName = emp.FirstName
+                              emp.Id,
+                              emp.LastName,
+                              emp.Gender,
+                              emp.Language,
+                              emp.PhoneNumber,
+                              emp.Email,
+                              emp.LoginName,
+                              emp.FirstName
                           };
 
             employeeDataGridView.DataSource = selectedEmployee.ToList();

@@ -59,11 +59,13 @@ namespace CompanyManagementSystem
             HTBOTTOMLEFT = 16,
             HTBOTTOMRIGHT = 17;
 
-        const int _ = 10; 
+        const int _ = 10;
 
-        Rectangle Top { get { return new Rectangle(0, 0, this.ClientSize.Width, _); } }
-        Rectangle Left { get { return new Rectangle(0, 0, _, this.ClientSize.Height); } }
-        Rectangle Bottom { get { return new Rectangle(0, this.ClientSize.Height - _, this.ClientSize.Width, _); } }
+        new Rectangle Top { get { return new Rectangle(0, 0, this.ClientSize.Width, _); } }
+
+        new Rectangle Left { get { return new Rectangle(0, 0, _, this.ClientSize.Height); } }
+
+        new Rectangle Bottom { get { return new Rectangle(0, this.ClientSize.Height - _, this.ClientSize.Width, _); } }
 
         private void PanelDrag_MouseDown_1(object sender, MouseEventArgs e)
         {
@@ -74,7 +76,7 @@ namespace CompanyManagementSystem
             }
         }
 
-        Rectangle Right { get { return new Rectangle(this.ClientSize.Width - _, 0, _, this.ClientSize.Height); } }
+        new Rectangle Right { get { return new Rectangle(this.ClientSize.Width - _, 0, _, this.ClientSize.Height); } }
         Rectangle TopLeft { get { return new Rectangle(0, 0, _, _); } }
         Rectangle TopRight { get { return new Rectangle(this.ClientSize.Width - _, 0, _, _); } }
         Rectangle BottomLeft { get { return new Rectangle(0, this.ClientSize.Height - _, _, _); } }

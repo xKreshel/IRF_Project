@@ -154,7 +154,7 @@ namespace CompanyManagementSystem
             this.employeeslistBox.Name = "employeeslistBox";
             this.employeeslistBox.Size = new System.Drawing.Size(120, 95);
             this.employeeslistBox.TabIndex = 1;
-            this.employeeslistBox.SelectedIndexChanged += new System.EventHandler(this.employeesListBox_SelectedIndexChanged);
+            this.employeeslistBox.SelectedIndexChanged += new System.EventHandler(this.EmployeesListBox_SelectedIndexChanged);
             // 
             // searchTextBox
             // 
@@ -162,7 +162,7 @@ namespace CompanyManagementSystem
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchTextBox.TabIndex = 2;
-            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
+            this.searchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // Form1
             // 

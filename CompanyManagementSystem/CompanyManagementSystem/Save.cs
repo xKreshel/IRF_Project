@@ -13,7 +13,7 @@ namespace CompanyManagementSystem
 {
     public partial class Save : Form
     {
-        Bitmap bmp;
+        readonly Bitmap bmp;
         public Save(Int32 x, Int32 y, Int32 w, Int32 h, Size s)
         {
             InitializeComponent();
@@ -25,12 +25,14 @@ namespace CompanyManagementSystem
             pbCapture.Image = bmp;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.CheckPathExists = true;
-            sfd.FileName = "Capture";
-            sfd.Filter = "PNG Image(*.png)|*.png|JPG Image(*.jpg)|*.jpg|BMP Image(*.bmp)|*.bmp";
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                CheckPathExists = true,
+                FileName = "Capture",
+                Filter = "PNG Image(*.png)|*.png|JPG Image(*.jpg)|*.jpg|BMP Image(*.bmp)|*.bmp"
+            };
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 pbCapture.Image.Save(sfd.FileName);
