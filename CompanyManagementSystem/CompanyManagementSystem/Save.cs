@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace CompanyManagementSystem
 {
+    //Credit: Nishan Chathuranga Wickramarathna for Screen Capturing -> https://medium.com/@nishancw/c-screenshot-utility-to-capture-a-portion-of-the-screen-489ddceeee49
     public partial class Save : Form
     {
         readonly Bitmap bmp;

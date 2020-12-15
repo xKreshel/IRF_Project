@@ -11,25 +11,37 @@ using System.Windows.Forms;
 
 namespace CompanyManagementSystem
 {
-    //Credit: Jason FinTech for Drawing -> https://www.youtube.com/watch?v=5Y-Qq3_PWrQ
-    //Credit: Nishan Chathuranga Wickramarathna for Screen Capturing -> https://medium.com/@nishancw/c-screenshot-utility-to-capture-a-portion-of-the-screen-489ddceeee49
     public partial class Form1 : Form
     {
+        //Creating context
         readonly CompanyDatabaseEntities context = new CompanyDatabaseEntities();
         public Form1()
         {
             InitializeComponent();
-            context.Employees.Load();
+            //Data loading/binding
+            try
+            {
+                context.Employees.Load();
+                employeeBindingSource.DataSource = context.Employees.Local;
+            }
+            catch (Exception e)
+            {
 
-            employeeBindingSource.DataSource = context.Employees.Local;
-
+                MessageBox.Show("Exception " + e);
+            }
             
+
+            //Populate DataGridView
             FillDataSource();
+
+            //Adding some design
             DesignDataGridView();
+
             employeeslistBox.DisplayMember = "FirstName";
             
         }
 
+        //Data binding
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'companyDatabaseDataSet.Employee' table. You can move, or remove it, as needed.
@@ -37,6 +49,7 @@ namespace CompanyManagementSystem
 
         }
 
+        //Populate DataGridView
         private void FillDataSource()
         {
             employeeslistBox.DataSource = (from i in context.Employees
@@ -44,6 +57,7 @@ namespace CompanyManagementSystem
                                    select i).ToList();
         }
 
+        //Design functions
         private void DesignDataGridView()
         {
             foreach (DataGridViewColumn col in employeeDataGridView.Columns)
@@ -64,11 +78,13 @@ namespace CompanyManagementSystem
             employeeDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
         }
 
+        //TextBox function
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             FillDataSource();
         }
 
+        //Listbox function
         private void EmployeesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 

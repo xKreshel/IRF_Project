@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CompanyManagementSystem
 {
+    //Credit: Jason FinTech for Drawing -> https://www.youtube.com/watch?v=5Y-Qq3_PWrQ
     class LineList
     {
         public static long TotalCount;
