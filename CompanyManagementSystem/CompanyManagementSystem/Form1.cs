@@ -18,6 +18,7 @@ namespace CompanyManagementSystem
         public Form1()
         {
             InitializeComponent();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             //Data loading/binding
             try
             {

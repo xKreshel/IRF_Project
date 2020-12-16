@@ -20,6 +20,7 @@ namespace CompanyManagementSystem
         public Form2()
         {
             InitializeComponent();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             try
             {
                 context.Employees.Load();
