@@ -38,6 +38,24 @@ namespace CompanyManagementSystem
             FormDesign();
         }
 
+        //Populate DataGridView
+        private void FillDataGridView()
+        {
+            foreach (var emp in context.Employees.Local)
+            {
+                employees.Add(emp);
+            }
+            employeesDataGridView.DataSource = context.Employees.Local;
+        }
+
+        //Data binding
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'companyDatabaseDataSet.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.companyDatabaseDataSet.Employee);
+
+        }
+
         //Design functions
         private void FormDesign()
         {
@@ -62,24 +80,6 @@ namespace CompanyManagementSystem
             employeesDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
             employeesDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
             employeesDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-        }
-
-        //Populate DataGridView
-        private void FillDataGridView()
-        {
-            foreach (var emp in context.Employees.Local)
-            {
-                employees.Add(emp);
-            }
-            employeesDataGridView.DataSource = context.Employees.Local;
-        }
-
-        //Data binding
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'companyDatabaseDataSet.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.companyDatabaseDataSet.Employee);
-
         }
 
         //Save, Load Files for Employee Table

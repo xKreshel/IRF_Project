@@ -31,7 +31,6 @@ namespace CompanyManagementSystem
                 MessageBox.Show("Exception " + e);
             }
             
-
             //Populate DataGridView
             FillDataSource();
 
@@ -39,7 +38,6 @@ namespace CompanyManagementSystem
             DesignDataGridView();
 
             employeeslistBox.DisplayMember = "FirstName";
-            
         }
 
         //Data binding
@@ -58,7 +56,7 @@ namespace CompanyManagementSystem
                                    select i).ToList();
         }
 
-        //Design functions
+        //Design function
         private void DesignDataGridView()
         {
             foreach (DataGridViewColumn col in employeeDataGridView.Columns)
@@ -107,7 +105,5 @@ namespace CompanyManagementSystem
 
             employeeDataGridView.DataSource = selectedEmployee.ToList();
         }
-
-
     }
 }

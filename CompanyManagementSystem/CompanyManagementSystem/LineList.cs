@@ -39,15 +39,6 @@ namespace CompanyManagementSystem
             set { _Y2 = value; }
         }
 
-        public LineList(int _X1, int _Y1, int _X2, int _Y2)
-        {
-            X1 = _X1;
-            Y1 = _Y1;
-            X2 = _X2;
-            Y2 = _Y2;
-            TotalCount += 1;
-        }
-
         public LineList()
         {
             X1 = 0;
@@ -55,11 +46,6 @@ namespace CompanyManagementSystem
             X2 = 0;
             Y2 = 0;
             TotalCount += 1;
-        }
-
-        ~LineList()
-        {
-            TotalCount -= 1;
         }
     }
 }
